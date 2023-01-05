@@ -1,0 +1,72 @@
+# Dane MacFadden
+# dgm288
+# 11283087
+#
+# James Hom
+# jhh318
+# 11287431
+
+Created a new system call for symlink
+- Added an entry to user/user.pl: entry("symlink")
+- Added an entry to user/user.h: int symlink(char*, char*);
+- Implement an empty sys_symlink in kernel/ -> defs.h, syscall.c, syscall.h, and
+    sysfile.c
+
+Added new file type T_SYMLINK = 4 to kernel/stat.h to represent a symbolic link
+
+Added a new flag O_NOFOLLOW 0x010 to kernel/fcntl.h for the open system call
+
+Implementing symlink(target, path) to create a new symbolic link
+-   uint64
+    sys_symlink(void)
+    {
+        Need a target and path of MAXPATH
+        if the argstr of target OR path are negative, then return -1
+        print the directory of target and path
+        ^ based on lab
+
+        start the filesystem system call
+        create an inode with path and the file type T_SYMLINK
+        check if inode is empty
+        write data to the inode with regards to the string length of target
+        copy the modified inode to the disk, then unlock and put
+        end the filesystem system call
+    }
+
+Storing the target path of a symbolic link in the inode's data blocks
+- in the static struct inodde* method, we had a condition where if the type is
+    the file type T_SYMLINK, then we want to return the inode
+- static struct inode*
+  ...
+  if the inode = directory look up of the directory inode and name is not empty,
+    then check if the type is the same as T_SYMLINK,
+    then return the inode
+
+Modifying open system call for handling case where path refers to a symbolic
+link
+- if((f = filealloc()) == 0 || (fd = fdalloc(f)) < 0){
+    ...
+  }
+  if omode and O_NOFOLLOW
+    then we check if the inode's type is a T_SYMLINK and has count less than 10
+
+Following a linked file that is a symbolic link until it recursively follows to
+a non-link file
+- if the file does not exist, open must fail
+    then when a process specifies O_NOFOLLOW in the flags to open, open should 
+        open the symlink (and not follow the symbolic link).
+    otherwise, open should follow the symlink
+    then we unlock and put the inode to check if not empty to increase counter
+    then we check if the length is greater than MAXPATH as a base case to check 
+        if there is a corrupted symlink inode
+    if the linked file is also a symbolic link, you must recursively follow it 
+        until a non-link file is reached. if the links form a cycle, return an 
+        error code.
+    then we check if the name of the inode's path is empty for a base case
+
+Links forming a cycle
+-   then we check if the counter is greater than 10 to see if we got a cycle
+        however, I have commented out line 377 in sysfile.c to prevent it from 
+        saying that there is a cycle after count is greater than 10 ot match
+        the assignment specs
+

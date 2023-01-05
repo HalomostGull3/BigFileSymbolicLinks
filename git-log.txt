@@ -1,0 +1,109 @@
+# Dane MacFadden
+# dgm288
+# 11283087
+#
+# James Hom
+# jhh318
+# 11287431
+
+commit b77f201fbdc9f093c6de16db25c22cbba86c1846 (HEAD -> a4, origin/a4)
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:41:40 2022 -0600
+
+    Completed diff file for xv6-diff.txt
+
+commit 4b951155db8db3d9e31133018b3b241e27711695
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:31:51 2022 -0600
+
+    Created tar file for xv6-a4.tar
+
+commit 630a80fae9869ea945e59898a8eb95516d109332
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:30:45 2022 -0600
+
+    Completed Output.txt
+
+commit f02b18bb0d7215cb3acf1c16bd287c082cc3a8e4
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:30:15 2022 -0600
+
+    Completed PartB.design.txt
+
+commit 465d194a500cc2bc3dc36e782d778482828c3434
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:29:49 2022 -0600
+
+    Completed PartA.design.txt
+
+commit 8dc9a5f0fc34991511e3458728066dc16e9f1934 (origin/a4)
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:29:01 2022 -0600
+
+    Put all xv6 files and directories into xv6/
+
+commit 0a837c951145705bd4c4af2858c7ff358251f21a
+Author: James Hom (jhh318) <jhh318@usask.ca>
+Date:   Tue Dec 6 23:25:28 2022 -0600
+
+    Complete Part B for Symbolic Links
+
+commit 4f3f23c9476bc1aaeb27af21902bf6ceb51af0ce (origin/A4)
+Author: James Hom (jhh318) <jhh318@mail.usask.ca>
+Date:   Tue Dec 6 23:17:06 2022 -0600
+
+    Deleted .gdbinit.tmpl-riscv, .editorconfig, .dir-locals.el, .gitignore
+
+commit 07c49da8a45ae312f91951a43e279b6a83f04e64
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Tue Dec 6 19:54:28 2022 -0600
+
+    Finished fs.c
+
+commit 8632c196c7236a8612dc5280c3320aad2507c5f7
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Sun Dec 4 14:30:45 2022 -0600
+
+    Added itrunc for doubly indirect blocks
+
+commit 4ca490e4297f67bdcd01f31a6481c61053384f50
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Fri Dec 2 23:10:34 2022 -0600
+
+    Finished bmap, now need to fix itrunc
+
+commit 1065c6dfea41648ce3964687d16cee8c78a5637a
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Fri Dec 2 18:31:12 2022 -0600
+
+    Finished bmap, working on itrunc then will test/debug.
+
+commit 9d11cb27f3730ffc7a25ea18e2360a8031c37702
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Fri Dec 2 17:49:51 2022 -0600
+
+    Changed bmap to load first indirect block
+
+commit fd43991beb1bd78e508743bd17f74d98fe427387
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Fri Dec 2 17:44:42 2022 -0600
+
+    Changed addr array sizes in fs.h and file.h (for disk inodes and RAM inodes) to support double indirect blocks
+
+commit 28beed99c78d0b4af0755189a023eed7e1a0f3d9
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Wed Nov 30 13:37:52 2022 -0600
+
+    Added provided test files
+
+commit 40ae4605902e27b64f99a142eed385fe010aeac1
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Tue Nov 29 15:35:34 2022 -0600
+
+    Changed fs size to 200,000
+
+commit 06b92f96021c6fe0d8eb4728fb268ba84e863cde
+Author: Dane MacFadden <dgm288@usask.ca>
+Date:   Tue Nov 29 15:18:53 2022 -0600
+
+    added xv6
